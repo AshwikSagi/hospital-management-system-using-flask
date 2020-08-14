@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% include "properhome.html" %}
+{% block content %}
+<style>
+    #tt {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tt,td ,th,tr {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+tt tr:nth-child(even){
+   
+    background-color: #f2f2f2;}
+</style>
+<title>MEDICINE PURCHASE SUMMARY</title>
+    <thead>
+        <h1 style="color: white;" >PATIENT DETAILS</h1>  
+        <table id="tt">
+                    
+    <tr>
+        <th>Patient SSN ID</th>
+        <th>Name</th>
+        <th> Age</th>
+        <th>Date of Admission</th>
+		<th>Address</th>
+    </tr>
+        
+     <tbody>
+        {% if res %} 
+            <tr>
+                <td>{{ res.pid }}</td> 
+                <td> {{ res.name }}</td>
+                <td>{{ res.age }}</td> 
+                <td> {{ res.doa }}</td>
+				<td>{{ res.address }}</td>                         
+            </tr>
+            
+        {% endif %}
+    </tbody>
+	</thead>
+	</table>
+	
+
+    <thead>
+        <h1 style="color: white;" >MEDICNES PURCHASED BY CUSTOMER </h1>  
+        <table id="tt">
+                    
+    <tr>
+        <th>Medicine Name</th>
+        <th>Quantity Purchased</th>
+        <th> Rate</th>
+        <th>Amount</th>
+    </tr>
+        
+     <tbody>
+        {% for i in records %} 
+            <tr>
+                <td>{{ i.medname }}</td> 
+                <td> {{ i.qtypur }}</td>
+                <td>{{ i.rate }}</td> 
+                <td> {{ i.amt }}</td>                       
+            </tr>
+            
+        {% endfor %}
+    </tbody>
+	</thead>
+	</table>
+
+
+    
+    {% endblock %}
+    
+
+
+

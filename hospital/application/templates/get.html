@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+   {% include "properhome.html" %}
+    {% block content %}
+
+<h2><center>DELETE PATIENT</center></h2>
+<div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3></h3>
+<form name="delete" action="" method="post">
+
+			{{ form.hidden_tag() }}
+                
+			<p>
+			{{ form.pid.label }}
+			{{ form.pid(size=15) }}
+			{% for error in form.pid.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+            </p>
+            <br>
+			<p>
+			{{ form.name.label }}<br>
+			{{ form.name(size=20) }}
+			{% for error in form.name.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+			</p>
+			<p>
+			{{ form.age.label }}<br>
+			{{ form.age(size=5) }}
+			{% for error in form.age.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+            </p>
+            <p>
+                {{form.tob.label}}<br>
+                {{form.tob}}
+				{% for error in form.tob.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+            </p>
+			<p>
+			{{ form.address.label }}<br>
+			{{ form.address(size=50) }}
+			{% for error in form.address.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+			</p>
+			<p>
+			{{ form.state.label }}<br>
+			{{ form.state }}
+			{% for error in form.state.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+			</p>
+			<p>
+			{{ form.city.label }}<br>
+			{{ form.city }}
+			{% for error in form.city.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+			</p>
+<br>
+<br>
+
+<div class="container">
+    <p>
+                {{ form.submit()}}
+                </p><br>
+    </div>
+            </form>
+			
+        </div>
+    </div>
+
+
+
+{% endblock %}

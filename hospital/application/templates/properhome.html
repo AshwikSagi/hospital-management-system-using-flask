@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+ 
+  <title>Hospital Management</title>
+  <link href="https://font.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+ </head>
+ <body>
+ <!-- <div class="container-fluid text-center top-container"> -->
+ <h1 style="color:red"; "font-family:verdana";>PITS HOSPITAL MANAGEMENT SYSTEM </h1>
+   <!-- <img src="bank.jpg" width="1000" height="100"> -->
+
+ <header>
+ <nav>
+ <ul class="menu">
+ 
+ <li><a href="#">Patient</a>
+ <ul class="submenu">
+ <li><a href="{{ url_for('create') }}">create</a></li>
+ <li><a href="{{ url_for('delete') }}">delete</a></li>
+ <li><a href="{{ url_for('update') }}">update </a></li>
+ <li><a href="{{ url_for('view') }}">view</a></li>
+ <li><a href="{{ url_for('search') }}">search</a></li>
+ <li><a href="#">bill</a></li>
+</ul>
+ </li>
+ <li><a href="#">Pharmacy</a>
+ <ul class="submenu">
+  <li><a href="{{ url_for('pharmsearch') }}">Issue medicines to patient</a></li>
+ </ul>
+ </li>
+
+ <li><a href="#">Diagnostics</a>
+  <ul class="submenu">
+    <li><a href="#">get patient details</a></li>
+    <li><a href="#"> diagnostics screen</a></li>
+</ul>
+ </li>
+ 
+ <li><a href="{{ url_for('logout') }}">Logout</a></li>
+ </ul>
+ </nav>
+ </header>
+ <!---
+ <br>
+ <br>
+ <br>
+ <br><br>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br><br><br><br><br>
+  </body>
+ 
+ <table style="width:100%">
+  <tr>
+    <th>About Us</th>
+    <th>Services</th> 
+    <th>Contact Us</th>
+  </tr>
+  <tr>
+    <td width=45%><p><br>..........</p></td>
+    <td width=33%> <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  </p></td>
+    <td width=33%><p>Email: customerservice@pitshospital.com<br> Contact No: 8767766918, 040-2118866 <br> Addresss: HITEC City, Madhapur, Hyderabad- 500081</p></td>
+  </tr>
+</table>
+-->
+  </body>
+
+</html>  

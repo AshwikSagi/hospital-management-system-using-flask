@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+   {% include "properhome.html" %}
+    {% block content %}
+
+<h2><center>FIND PATIENT WITH ID</center></h2>
+<div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3></h3>
+<form name="delete" action="" method="post">
+
+{{ form.hidden_tag() }}
+                
+			<p>
+			{{ form.pid.label }}
+			{{ form.pid(size=15) }}
+			{% for error in form.pid.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+            </p>
+			<button type="submit" class="btn btn-success" name="action" value="get">get</button>
+            </div><br>
+		
+    </div>
+
+
+
+{% endblock %}

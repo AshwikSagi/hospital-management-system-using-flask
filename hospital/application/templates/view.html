@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% include "properhome.html" %}
+{% block content %}
+<style>
+    #tt {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tt,td ,th,tr {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+tt tr:nth-child(even){
+   
+    background-color: #f2f2f2;}
+</style>
+
+
+
+
+<title>VIEW PATIENTS</title>
+    <thead>
+        <h1 style="color: white;" >VIEW PATIENTS</h1>  
+        <table id="tt">
+                    
+    <tr>
+        <th>Patient SSN ID</th>
+        <th>Name</th>
+        <th> Age</th>
+        <th>Date of Admission</th>
+		<th>Address</th>
+        <th> Type of bed</th>
+		<th>State</th>
+        <th>City</th>
+    </tr>
+        
+     <tbody>
+        {% for i in patients %} 
+            <tr>
+                <td>{{ i.pid }}</td> 
+                <td> {{ i.name }}</td>
+                <td>{{ i.age }}</td> 
+                <td> {{ i.doa }}</td>
+				<td>{{ i.address }}</td> 
+                <td> {{ i.tob }}</td>
+				<td>{{ i.state }}</td> 
+                <td> {{ i.city }}</td>                         
+            </tr>
+            
+        {% endfor %}
+        
+    </tbody>
+
+</thead>
+    </table>
+    {% endblock %}
+    
+
+
+

@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+   {% include "properhome.html" %}
+    {% block content %}
+<style>
+    #tt {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tt,td ,th,tr {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+tt tr:nth-child(even){
+   
+    background-color: #f2f2f2;}
+</style>
+<title>SELECT MEDICINES</title>
+
+<h2><center>CHECK MEDICINE AVAILABILTY</center></h2>
+<div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h3></h3>
+<form name="selectmeds" action="" method="post">
+
+{{ form.hidden_tag() }}
+                
+			<p>
+			{{ form.name.label }}
+			{{ form.name(size=40) }}
+			{% for error in form.name.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+            </p>
+			<p>
+			{{ form.qty.label }}
+			{{ form.qty() }}
+			{% for error in form.qty.errors %}
+			<span class="error-message">{{error}}</span>
+			{% endfor %}
+            </p>
+			<div class="container">
+			<p>
+                {{ form.add()}}
+                </p><br>
+			</div>
+</form>
+            </div><br>
+		
+    </div>
+	
+    <thead>
+        <h1 style="color: white;" >SELECTED MEDICINES</h1>  
+        <table id="tt">
+                    
+    <tr>
+        <th>Medicine Name</th>
+        <th>Quantity</th>
+        <th> Rate</th>
+        <th>Amount</th>
+    </tr>
+        
+     <tbody>
+        {% for list in res  %} 
+            <tr>
+                <td>{{ list[0] }}</td> 
+                <td> {{ list[1] }}</td>
+                <td>{{ list[2] }}</td> 
+                <td> {{ list[3] }}</td>                         
+            </tr>
+            
+        {% endfor %}
+    </tbody>
+	</thead>
+	</table>
+	
+<form name="storemeds" action="{{ url_for('storemeds') }}" method="post">
+{{ form.hidden_tag() }}
+			<div class="container">
+			<center>
+			<p>
+                {{ form.update()}}
+                </p></center>
+			</div>
+</form>
+
+
+
+{% endblock %}
