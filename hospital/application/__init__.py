@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = 'Thisissupposedtobesecret!'
 
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:////Users/SHRUTI PETWAL/Desktop/hospital/database.db'
+app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///database.db'
 
 db=SQLAlchemy(app)
 db.init_app(app)

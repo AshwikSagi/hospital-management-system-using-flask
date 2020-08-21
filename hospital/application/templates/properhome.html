@@ -17,7 +17,7 @@
  <ul class="menu">
  
  <li><a href="#">Patient</a>
- <ul class="submenu">
+ <ul class="submenu" style="z-index: 999;">
  <li><a href="{{ url_for('create') }}">create</a></li>
  <li><a href="{{ url_for('delete') }}">delete</a></li>
  <li><a href="{{ url_for('update') }}">update </a></li>
@@ -27,13 +27,13 @@
 </ul>
  </li>
  <li><a href="#">Pharmacy</a>
- <ul class="submenu">
+ <ul class="submenu" style="z-index: 999;">
   <li><a href="{{ url_for('pharmsearch') }}">Issue medicines to patient</a></li>
  </ul>
  </li>
 
  <li><a href="#">Diagnostics</a>
-  <ul class="submenu">
+  <ul class="submenu" style="z-index: 999;">
     <li><a href="#">get patient details</a></li>
     <li><a href="#"> diagnostics screen</a></li>
 </ul>

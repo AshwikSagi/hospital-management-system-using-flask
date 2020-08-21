@@ -49,14 +49,14 @@ def properhome():
 @login_required
 def create():
 	form = CreateForm()
+	
 	if request.method=='POST' and form.validate_on_submit():
 		result = Patient.query.filter_by(pid=form.pid.data).first()
 		if result:
 				flash('Patient already exists!','danger')
 				return redirect(url_for('create'))
 		else:
-			autopid = ''.join(secrets.choice(string.digits) 
-														  for i in range(N))
+			autopid = ''.join(secrets.choice(string.digits) for i in range(N))
 			x= datetime.datetime.strptime(request.form.get('doa'), '%Y-%m-%d')
 			newp = Patient(autopid=autopid, pid=request.form.get('pid'), name=request.form.get('name'),
 			age=request.form.get('age'), doa=x.date(),
@@ -65,7 +65,7 @@ def create():
 			db.session.add(newp)
 			db.session.commit()
 			flash('Patient creation initiated successfully','success')
-			return redirect(url_for('properhome'))
+			return redirect(url_for('create'))
 	return render_template('create.html',title='CREATE PATIENT',form=form)
 
 
